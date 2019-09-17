@@ -203,7 +203,7 @@ int main() {
 } */
 
 //TELEPHONE BOOK
-int main() {
+/* int main() {
     std::map<std::string, std::string> PIE2;
     PIE2.emplace("William A. Lathan", "405-709-1865");
     PIE2.emplace("John K. Miller", "402-247-8568");
@@ -211,17 +211,124 @@ int main() {
     PIE2.emplace("Amanda D. Newland", "319-243-5613");
     PIE2.emplace("Brooke P. Askew", "307-687-2982");
     std::cout << "John's number is: "<< PIE2.at("John K. Miller") << std::endl;
-    int value = 307-687-2982;
-    std::map<std::string, std::string>::iterator itr = std::find_if(PIE2.begin(), PIE2.end()
-                          [&value](const std::pair<std::string, std::string> &p) {
-                              return p.second == value;
-                          });
-    if (itr == PIE2.end()) {
-        std::cout << "Not found" << std::endl;
-    } else {
-        std::cout << "The number " << itr->first << "belongs to " << itr->second << std::endl;
+    std::string numname = "empty";
+    for (auto &i : PIE2) {
+        if (i.second == "307-687-2982") {
+            numname = i.first;
+            break;
+        }
     }
+    std::cout << "The number belongs to " << numname << std::endl;
+    if (PIE2.find("Chris E.Myers") != PIE2.end()){
+        std::cout << "We know Chris' number" << std::endl;
+    } else {
+        std::cout << "We don't know Chris' number\n";
+    }
+
+    return 0;
+} */
+
+//PRODUCT DATABASE
+/* int main() {
+    std::map<std::string, int> database{
+        std::make_pair("Eggs", 200),
+        std::make_pair("Milk", 200),
+        std::make_pair("Fish",400),
+        std::make_pair("Apples", 150),
+        std::make_pair("Bread", 50),
+        std::make_pair("Chicken", 550)
+    };
+    std::cout << "The fish is " << database.at("Fish") << "." << std::endl;
+    int mose;
+    std::string mosepro;
+    int chea;
+    std::string cheapro;
+    for(auto it = database.cbegin(); it != database.cend(); ++it) {
+        if (it ->second > mose) {
+            mosepro = it->first;
+            mose = it->second;
+        } else if (it ->second < chea) {
+            cheapro = it->first;
+            chea = it->second;
+        }
+    }
+    for(auto it = database.cbegin(); it != database.cend(); ++it) {}
+    std::cout << "The most expensive product is " << mosepro << "." << " It costs " << mose << "." << std::endl;
+    std::cout << "The cheapest product is " << cheapro << "." << " It costs " << chea << "." << std::endl;
+
+    int sum;
+    for (auto it = database.cbegin(); it != database.cend(); ++it) {
+        sum = sum + it->second;
+    }
+    int avg = sum/ database.size();
+    std::cout << "The average price is " << avg << std::endl;
+
+    int prod300;
+    for (auto it = database.cbegin(); it != database.cend(); ++it) {
+        if (it->second < 300) {
+            prod300++;
+        }
+    }
+    std::cout << "There are " << prod300 << " products below 300." << std::endl;
+    int pr125;
+    for (auto it = database.cbegin(); it != database.cend(); ++it) {
+        if (it->second < 125) {
+            pr125 = 0;
+        } else if (it->second > 125) {
+            pr125 = 0;
+        } else {
+            pr125++;
+        }
+    }
+    std::cout << "There are " << pr125 << " products we can buy for 125." << std::endl;
+
+    std::cout << "Less than 201: \n";
+    for (auto it = database.cbegin(); it != database.cend(); ++it) {
+        if (it->second < 201) {
+            std::cout << it->first << std::endl;
+        }
+    }
+    std::cout << "More than 150: \n";
+    for (auto it = database.cbegin(); it != database.cend(); ++it) {
+        if (it->second > 150) {
+            std::cout << it->first << " " << it->second << std::endl;
+        }
+    }
+
+    return 0;
+} */
+
+//SHOPPING LIST 2
+int main() {
+    std::map<std::string, int> boblist{
+        std::make_pair("Milk", 3),
+        std::make_pair("Rice", 2),
+        std::make_pair("Eggs", 2),
+        std::make_pair("Cheese", 1),
+        std::make_pair("Chicken Breasts", 4),
+        std::make_pair("Apples", 1),
+        std::make_pair("Tomato", 2),
+        std::make_pair("Potato", 1)
+    };
+    std::map<std::string, int> alist{
+            std::make_pair("Rice", 1),
+            std::make_pair("Eggs", 5),
+            std::make_pair("Chicken Breasts", 2),
+            std::make_pair("Apples", 1),
+            std::make_pair("Tomato", 10)
+    };
+    std::map<std::string, float> prices{
+            std::make_pair("Milk", 1.07),
+            std::make_pair("Rice", 1.59),
+            std::make_pair("Eggs", 3.14),
+            std::make_pair("Cheese", 12.60),
+            std::make_pair("Chicken Breasts", 9.40),
+            std::make_pair("Apples", 2.31),
+            std::make_pair("Tomato", 2.58),
+            std::make_pair("Potato", 1.75),
+            std::make_pair("Onion", 1.10),
+    };
+
     return 0;
 }
 
-//TO BE CONTINUED
